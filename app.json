@@ -1,6 +1,35 @@
 {
   "expo": {
     "name": "podhub",
-    "slug": "podhub"
+    "slug": "podhub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#443333"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fingerfood.podhub"
+    },
+    "android": {
+      "package": "com.fingerfood.podhub",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./src/assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "757a5e54-d852-4293-8088-a4143d66328d"
+      }
+    },
+    "scheme": "my-scheme"
   }
 }
