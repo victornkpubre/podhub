@@ -202,45 +202,12 @@ const useAudioController = () => {
         if(currentTrack < onGoingList.length - 1){
             dispatch(updateCurrentTrack(currentTrack + 1))
         }
-        // if (!onGoingList) return
-        
-        // const firstTrack = onGoingAudio.id === onGoingList[0].id
-        // const lastTrack = loadedAudio.id === onGoingList[onGoingList.length - 1].id
-
-
-        // if(!lastTrack) {
-        //     const nextTrack = onGoingList[currentTrack + 1]
-        //     await audioObject.unloadAsync()
-        //     await audioObject.loadAsync({uri: nextTrack.file.url});
-        //     await audioObject.playAsync();
-
-        //     dispatch(updateOnGoingAudio(nextTrack))
-        //     dispatch(updateLoadedAudio(nextTrack))
-        //     dispatch(updateCurrentTrack(currentTrack + 1))
-        // }
-        // else {
-        //     await stop()
-        // }
- 
     }
 
     const onPrev = async() => {
         if(currentTrack > 0){
             dispatch(updateCurrentTrack(currentTrack - 1))
         }
-        // if (!onGoingList) return
-
-        // const firstTrack = onGoingAudio.id === onGoingList[0].id
-
-        // if(!firstTrack) {
-        //     const nextTrack = onGoingList[currentTrack - 1]
-        //     await audioObject.unloadAsync()
-        //     await audioObject.loadAsync({uri: nextTrack.file.url});
-        //     await audioObject.playAsync();
-
-        //     dispatch(updateOnGoingAudio(nextTrack))
-        //     dispatch(updateLoadedAudio(nextTrack))
-        // }
     }
 
     const stop = async() => {

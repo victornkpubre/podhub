@@ -17,7 +17,7 @@ import { useAuthRequest, makeRedirectUri, exchangeCodeAsync } from 'expo-auth-se
 import SpotifyResultItem from '@ui/SpotifyResultItem';
 import { updateNotification } from '@src/store/notification';
 import { Keys, getFromAsyncStorage, saveToAsyncStorage } from '@utils/asyncStorage';
-import { AxiosError } from 'axios';
+import { CLIENTID, CLIENTSECRET } from 'variables';
 
 interface Props {}
 
@@ -44,7 +44,7 @@ const SoptifyModal: FC<Props> = props => {
 
 
     const [request, response, promptAsync] = useAuthRequest({
-        clientId: 'd5d8bfeb561e44c09bab30a30037f3b0',
+        clientId: CLIENTID,
         scopes: ['user-read-email', 'playlist-modify-public'],
         usePKCE: false,
         redirectUri: makeRedirectUri({ 
@@ -58,13 +58,13 @@ const SoptifyModal: FC<Props> = props => {
         setBusy(true)
         console.log("getting token from server")
         const token = await exchangeCodeAsync({
-            clientId: 'd5d8bfeb561e44c09bab30a30037f3b0',
+            clientId: CLIENTID,
             code: code, 
             redirectUri: makeRedirectUri({ 
                 scheme: 'my-scheme://',
                 native: 'my-scheme://'
             }),
-            clientSecret: 'a3a1a3b272d5409ebe64c62ce7b13dbe'
+            clientSecret: CLIENTSECRET
         }, discovery)
         await saveToAsyncStorage(Keys.SPOTIFY_TOKEN, JSON.stringify(token))
         
